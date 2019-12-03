@@ -1,0 +1,20 @@
+1，为什么说git是分布式，而svn是集中式的？这个是相对于代码仓库来说的，svn
+   只有一个中央代码仓库，中央仓库中保存着所有的历史版本，客户端只有当前正在编辑
+   的代码版本，客户端只能从中央仓库中pull，或者push到中央仓库中去。
+   而git的仓库是去中心化的，每个人机器上都有一个完整的库，都有从clone那一刻起的
+   所有历史版本，虽然大家平时工作都是从一个固定的仓库pull，再push回去，但理论上
+   完全可以pull张三的库，再push到李四的库中去。
+2，git init初始化本地仓库(生成了.git文件夹)
+   git config user.name / user.email 设置签名
+   git status 查看暂存区的状态
+   工作区 -> git add -> 暂存区 -> git commit ->本地库
+3，因为每个人用的idea版本都不一样，所以一些idea的配置文件不能提交到远程库(ps:
+   自己一个人开发的话提交也没事)，https://github.com/github/gitignore网站
+   中例举了各种各样的需要忽略的文件。.gitignore文件用来配置需要忽略的文件。
+   最后需要提交的文件只有
+   - src
+   - pom.xml
+   - README.MD
+   - .gitignore
+   加一些组内自己规定的文件
+4，

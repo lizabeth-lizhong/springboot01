@@ -1,0 +1,70 @@
+1，shift + enter 快速定位到下一行
+2，psvm sout等是在File | Settings | Editor | General | Postfix Completion里面
+固定好的，而File | Settings | Editor | Live Templates是可以用户自定义的模板。
+    sout的变形：soutv,xxx.sout
+    fori,iter,itar,list.for,list.fori,list.forr,
+    ifn,inn,xx.nn,xx.null
+    prsf,psf,psfi,psfs
+3，ctrl + /单行注释，ctrl + shift + /是多行注释。
+4，ctrl + x 删除一行
+5，alt + shift + ↓ (or ctrl + shift + ↓)往下移动一行
+6，ctrl + d 复制一行或者选中的
+7，idea是自动保存，无需手动 ctrl + s
+8，每次新开一个project都应该重新配置
+    File | Settings | Editor | General | Auto Import &
+    File | Settings | Editor | File Encodings &
+    File | Settings | Editor | General | Editor Tabs &
+    File | Settings | Plugins &
+    File | Settings | Version Control | Git &
+    File | Settings | Build, Execution, Deployment | Build Tools | Maven &
+    File | Settings | Build, Execution, Deployment | Compiler &
+    ......
+    如果不想重新配置，可以将配好的project里面的.idea文件拷贝至新project的目录下
+9，“Project”工具栏的“Scroll from Source”按钮，可以快速定位当前所编辑的文件
+    所在位置，这个图标就是一个瞄准的意思，很形象吧。
+10，ctrl + alt + o 快速导入依赖类，虽然已经选择File | Settings | Editor |
+    General | Auto Import了，但还是记一下吧。
+11，Run | Edit Configurations里面添加外部Tomcat容器，Tomcat必须是已经下载并
+    配置好环境变量了。
+12，右侧方有Database可以连接数据库，虽然不能代替Navicat等mysql客户端，但是能简单的查看数据库
+    、表、以及反向生成domain(domain层，通常就是用于放置这个系统中，与数据库中的表，一一对应
+    起来的JavaBean的)
+13，在idea中操作git，VCS|checkout from version control|git 可以从github或者gitlab上pull下来
+    project(repository)，pull下来的project文件目录会多了一个.git隐藏文件，idea中是看不到的，
+    这个文件就git的配置和仓库文件。有了这个文件的项目，在idea|project区域中右键(或者VCS下拉)
+    才能出现git选项，进行git的add ,commit,push 等操作。或者file|new|project from version
+    control是一样的。
+14，VCS|import into version control|share project on github可以将project push到github上去，
+    而Create git repository(创建本地仓库)出现Select directory for git init对话框，然后git初
+    始化在当前项目的根目录，init完成之后，可以看到原本的项目文件名变成了红色了，红色在idea的
+    git版本表示未add的文件，同时在系统资源管理中打开项目的磁盘文件目录，会发现一个.git的隐藏文件
+    ，这个文件就是git的配置和仓库文件，再回到idea项目中，点击VCS》Git》Add添加当前项目下的文件，
+    添加完成之后，之前的红色文件名变成了绿色了，表示已经Add成功，但还没有commit继续操作，
+    VCS》Git》Commit File，然后在提交创建填写提交注释说明，提交完成之后，只是提交到本地仓库，
+    这个时候还没有同步到远程的gitlab服务上，需要push操作，VCS》Git》Push，然后通过网页的方
+    式登录gitlab服务，创建一个空的project，然后在如图所示的位置复制仓库地址，然后把这个地址
+    填写到刚刚push的时候弹出的对话框中。
+15，Create Gist。Gist [dʒɪst]，英文含义为主旨、要点，是Github的一个子服务，最简单的功能就是
+    分享代码片段。譬如可以把一些代码片段、待处理任务放到Gist上进行分享和管理。
+16，在没有git的时候，idea自己也提供了历史版本的功能，选中文件》右键》local history》show history
+17，File | Settings | Build, Execution, Deployment | Debugger中的Transport选成shared memory
+    可以节省内存空间，这种模式仅限windows系统，其他系统不能选。
+18，在断点的红色小点上点右键可以设置进入断点的条件。ctrl+u可查看variable的值
+19，构建工具发展史：make->Ant->Maven->Gradle
+20，Tools|generate javadocs可生成javadoc文件。
+21，IntelliJ IDEA 首次加载项目的时候，都会创建索引，主要是用来加快文件
+    查询，从而加快各种查找、代码提示等操作的速度，某些特殊条件下，IntelliJ
+    IDEA 的缓存和索引文件也是会损坏的，比如：断电、蓝屏引起的强制关机，有
+    时即便没有断电也会出现索引出错的问题，这种情况下，我们可以清理缓存和
+    索引：File|invalidate caches / Restart，也可以直接将
+    C:\Users\Administrator\.IntelliJIdea2019.2\system目录删掉，注意不要
+    删config目录，system存放的即缓存。
+22，取消idea自动更新：
+    File | Settings | Appearance & Behavior | System Settings | Updates
+23，插件下载就不说了
+24，File | Settings | Tools | Terminal的shell path代表的意思是idea中的ternimal
+    代替谁的活，如果写cmd.exe，那它和普通的cmd是一样的，如果选中
+    E:\Program Files (x86)\Git\git-cmd.exe，那它既能当做普通的cmd，又能当做git-bash
+    即能在idea的ternimal中操作git。如果选中E:\Program Files (x86)\Git\git-bash.exe，
+    那在idea中每次点击Termical都会打开git-bash窗口，关闭git-bash窗口就会关闭Termical
+    很烦，所以不要用最后一种。
